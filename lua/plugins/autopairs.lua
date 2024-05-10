@@ -1,5 +1,5 @@
 return {
-  "windwpnvim-autopairs",
+  "windw/nvim-autopairs",
   config = function()
     require("nvim-autopairs").setup {
       fast_warp = {},
