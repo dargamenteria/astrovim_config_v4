@@ -62,6 +62,10 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
+        ["<leader>B"] = { "<cmd>Neotree buffers<cr>", desc = "Neotree Buffers" },
+        ["<leader>G"] = { "<cmd>Neotree git_status<cr>", desc = "Neotree Git Status" },
+        ["<leader>ux"] = { "<cmd>UndotreeToggle<cr>", desc = "UndotreeToggle" },
+
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
