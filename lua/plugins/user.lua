@@ -8,4 +8,5 @@ return {
   {
     "jonarrien/telescope-cmdline.nvim",
   },
+  { "dmitmel/cmp-cmdline-history" },
 }

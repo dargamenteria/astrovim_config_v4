@@ -16,10 +16,12 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.python" },
 
-  -- { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.lsp.actions-preview-nvim" },
+
+  --{ import = "astrocommunity.utility.noice-nvim" },
 
   --other
-  -- { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
+  -- { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.motion.leap-nvim" },
 
   { import = "astrocommunity.workflow.hardtime-nvim" },

@@ -10,21 +10,19 @@ require("nvim-dap-projects").search_project_config()
 --Terminal stuff
 ----------
 --vim.keymap.set("n", "<F3>", "<cmd>ToggleTerm direction=horizontal size=20<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader><leader>", ":silent Telescope cmdline<CR>", { noremap = true, desc = "Cmdline" })
+-- vim.api.nvim_set_keymap("n", "<leader><leader>", ":silent Telescope cmdline<CR>", { noremap = true, desc = "Cmdline" })
 
 function _G.set_terminal_keymaps()
   local opts = { buffer = 0 }
   vim.keymap.set("t", "º", [[<C-\><C-n>]], opts)
 end
 
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
 
 local Terminal = require("toggleterm.terminal").Terminal
 
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
-function _G._lazygit_toggle()
-  lazygit:toggle()
-end
+local lazygit = Terminal:new { cmd = "lazygit", hidden = true, direction = "float" }
+function _G._lazygit_toggle() lazygit:toggle() end
 
 vim.api.nvim_set_keymap(
   "n",
@@ -33,10 +31,8 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "lazygit" }
 )
 
-local k9s = Terminal:new({ cmd = "k9s", hidden = true, direction = "float" })
-function _G._k9s_toggle()
-  k9s:toggle()
-end
+local k9s = Terminal:new { cmd = "k9s", hidden = true, direction = "float" }
+function _G._k9s_toggle() k9s:toggle() end
 
 vim.api.nvim_set_keymap(
   "n",
@@ -45,10 +41,8 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "k9s" }
 )
 
-local tftui = Terminal:new({ cmd = "tftui", hidden = true, direction = "float" })
-function _G._tftui_toggle()
-  tftui:toggle()
-end
+local tftui = Terminal:new { cmd = "tftui", hidden = true, direction = "float" }
+function _G._tftui_toggle() tftui:toggle() end
 
 vim.api.nvim_set_keymap(
   "n",
@@ -73,8 +67,8 @@ vim.api.nvim_set_keymap(
 --     ["~/%.config/foo/.*"] = "fooscript",
 --   },
 -- }
-local telescope = require("telescope")
-telescope.setup({
+local telescope = require "telescope"
+telescope.setup {
   extensions = {
     cmdline = {
       output_pane = {
@@ -82,6 +76,13 @@ telescope.setup({
       },
     },
   },
-})
+}
 
-telescope.load_extension("cmdline")
+vim.keymap.set(
+  "c",
+  "<S-Enter>",
+  function() require("noice").redirect(vim.fn.getcmdline()) end,
+  { desc = "Redirect Cmdline" }
+)
+
+--telescope.load_extension "cmdline"
