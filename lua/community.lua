@@ -17,12 +17,14 @@ return {
   { import = "astrocommunity.pack.python" },
 
   { import = "astrocommunity.lsp.actions-preview-nvim" },
+  { import = "astrocommunity.diagnostics/trouble-nvim" },
 
-  --{ import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.search.nvim-hlslens" },
 
   --other
   -- { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
 
   { import = "astrocommunity.workflow.hardtime-nvim" },
   { import = "astrocommunity.project.projectmgr-nvim" },

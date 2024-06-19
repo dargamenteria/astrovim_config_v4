@@ -22,7 +22,7 @@ return {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
-        spell = true, -- sets vim.opt.spell
+        spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
       },
@@ -36,6 +36,9 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
+      i = {
+        ["<C-CR>"] = { "cmd lua require('in-and-out').in_and_out()<br>", desc = "in-and-out trigger" },
+      },
       n = {
         -- second key is the lefthand side of the map
 
@@ -58,7 +61,27 @@ return {
         ["<leader>B"] = { "<cmd>Neotree buffers<cr>", desc = "Neotree Buffers" },
         ["<leader>G"] = { "<cmd>Neotree git_status<cr>", desc = "Neotree Git Status" },
         ["<leader>ux"] = { "<cmd>UndotreeToggle<cr>", desc = "UndotreeToggle" },
+        ["<leader>fx"] = {
+          "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+          desc = "live_ggrep_args",
+        },
 
+        ["<C-h>"] = { "<cmd>lua require('smart-splits').move_cursor_left<cr>", desc = "move cursor left" },
+        ["<C-l>"] = { "<cmd>lua require('smart-splits').move_cursor_right<cr>", desc = "move cursor right" },
+        ["<C-k>"] = { "<cmd>lua require('smart-splits').move_cursor_up<cr>", desc = "move cursor up" },
+        ["<C-j>"] = { "<cmd>lua require('smart-splits').move_cursor_down<cr>", desc = "move cursor down" },
+
+        ["<A-h>"] = { "<cmd>lua require('smart-splits').resize_left<cr>", desc = "resize left" },
+        ["<A-l>"] = { "<cmd>lua require('smart-splits').resize_right<cr>", desc = "resize right" },
+        ["<A-k>"] = { "<cmd>lua require('smart-splits').resize_up<cr>", desc = "resize up" },
+        ["<A-j>"] = { "<cmd>lua require('smart-splits').resize_down<cr>", desc = "resize down" },
+
+        ["<leader><leader>h"] = { "<cmd>lua require('smart-splits').swap_buff_left<cr>", desc = "swap buffer left" },
+        ["<leader><leader>l"] = { "<cmd>lua require('smart-splits').swap_buff_right<cr>", desc = "swap buffer right" },
+        ["<leader><leader>k"] = { "<cmd>lua require('smart-splits').swap_buff_up<cr>", desc = "swap buffer up" },
+        ["<leader><leader>j"] = { "<cmd>lua require('smart-splits').swap_buff_down<cr>", desc = "swap buffer down" },
+
+        ["<C-CR>"] = { "cmd lua require('in-and-out').in_and_out()<br>", desc = "in-and-out trigger" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
