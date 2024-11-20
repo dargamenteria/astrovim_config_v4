@@ -66,20 +66,20 @@ return {
           desc = "live_ggrep_args",
         },
 
-        ["<C-h>"] = { "<cmd>lua require('smart-splits').move_cursor_left<cr>", desc = "move cursor left" },
-        ["<C-l>"] = { "<cmd>lua require('smart-splits').move_cursor_right<cr>", desc = "move cursor right" },
-        ["<C-k>"] = { "<cmd>lua require('smart-splits').move_cursor_up<cr>", desc = "move cursor up" },
-        ["<C-j>"] = { "<cmd>lua require('smart-splits').move_cursor_down<cr>", desc = "move cursor down" },
+        ["<C-h>"] = { "<cmd>lua require('smart-splits').move_cursor_left()<cr>", desc = "move cursor left" },
+        ["<C-l>"] = { "<cmd>lua require('smart-splits').move_cursor_right()<cr>", desc = "move cursor right" },
+        ["<C-k>"] = { "<cmd>lua require('smart-splits').move_cursor_up()<cr>", desc = "move cursor up" },
+        ["<C-j>"] = { "<cmd>lua require('smart-splits').move_cursor_down()<cr>", desc = "move cursor down" },
 
-        ["<A-h>"] = { "<cmd>lua require('smart-splits').resize_left<cr>", desc = "resize left" },
-        ["<A-l>"] = { "<cmd>lua require('smart-splits').resize_right<cr>", desc = "resize right" },
-        ["<A-k>"] = { "<cmd>lua require('smart-splits').resize_up<cr>", desc = "resize up" },
-        ["<A-j>"] = { "<cmd>lua require('smart-splits').resize_down<cr>", desc = "resize down" },
+        ["<A-h>"] = { "<cmd>lua require('smart-splits').resize_left(3)<cr>", desc = "resize left" },
+        ["<A-l>"] = { "<cmd>lua require('smart-splits').resize_right(3)<cr>", desc = "resize right" },
+        ["<A-k>"] = { "<cmd>lua require('smart-splits').resize_up(3)<cr>", desc = "resize up" },
+        ["<A-j>"] = { "<cmd>lua require('smart-splits').resize_down(3)<cr>", desc = "resize down" },
 
-        ["<leader><leader>h"] = { "<cmd>lua require('smart-splits').swap_buff_left<cr>", desc = "swap buffer left" },
-        ["<leader><leader>l"] = { "<cmd>lua require('smart-splits').swap_buff_right<cr>", desc = "swap buffer right" },
-        ["<leader><leader>k"] = { "<cmd>lua require('smart-splits').swap_buff_up<cr>", desc = "swap buffer up" },
-        ["<leader><leader>j"] = { "<cmd>lua require('smart-splits').swap_buff_down<cr>", desc = "swap buffer down" },
+        ["<leader><leader>h"] = { "<cmd>lua require('smart-splits').swap_buf_left()<cr>", desc = "swap buffer left" },
+        ["<leader><leader>l"] = { "<cmd>lua require('smart-splits').swap_buf_right()<cr>", desc = "swap buffer right" },
+        ["<leader><leader>k"] = { "<cmd>lua require('smart-splits').swap_buf_up<cr>", desc = "swap buffer up" },
+        ["<leader><leader>j"] = { "<cmd>lua require('smart-splits').swap_buf_down()<cr>", desc = "swap buffer down" },
 
         ["<C-CR>"] = { "cmd lua require('in-and-out').in_and_out()<br>", desc = "in-and-out trigger" },
         -- quick save
